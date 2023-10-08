@@ -9,11 +9,8 @@ def main():
 
     nfa_transition_table = get_nfa_transition_table(inputs, states)
 
-    print(nfa_transition_table)
-
-    pass
     converter = NfaToDfaConverter()
-    converter.convert(inputs, states, start_state, final_states, nfa_transition_table, "subset_construction")
+    converter.convert(inputs, states, start_state, final_states, nfa_transition_table, "lazy")
 
 
 def get_nfa_transition_table(inputs, states):
