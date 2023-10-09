@@ -17,7 +17,7 @@ def main():
         print("2 - Lazy")
         method = input("Enter method: ")
 
-        if method not in [1, 2]:
+        if method not in ['1', '2']:
             print("Error: Invalid method")
             exit(1)
 
