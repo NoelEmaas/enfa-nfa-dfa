@@ -10,7 +10,7 @@ $ pip install -r requirements.txt
 
 eNFA to NFA Output
 -----------------
-![Screenshot_2023-10-09-15-14-59_1920x1080](https://github.com/NoelEmaas/enfa-nfa-dfa/assets/90034393/e96a9b44-c809-4abd-aca9-d42d7a8d2327)
+![Screenshot_2023-10-09-20-29-03_1920x1080](https://github.com/NoelEmaas/enfa-nfa-dfa/assets/90034393/8d7b0d2c-ede0-4ab3-a644-c566b2ac2167)
 
 
 NFA to DFA Output with Complete Method
