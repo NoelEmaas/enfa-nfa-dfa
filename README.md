@@ -2,6 +2,12 @@
 
 A python program that converts εNFA to NFA and NFA to DFA.
 
+Install Dependencies
+-----------------
+```
+$ pip install -r requirements.txt
+```
+
 eNFA to NFA Output
 -----------------
 ![Screenshot_2023-10-09-15-14-59_1920x1080](https://github.com/NoelEmaas/enfa-nfa-dfa/assets/90034393/e96a9b44-c809-4abd-aca9-d42d7a8d2327)
