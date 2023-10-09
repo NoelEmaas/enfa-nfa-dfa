@@ -62,9 +62,11 @@ class ENfaToNfaConverter:
             headers += [i]
         headers.append('CL(q)')
         for i in self.inputs:
-            headers.append('S' + str(i))
+            if i != 'ε':
+                headers.append('S' + str(i))
         for i in self.inputs:
-            headers.append('δN(q,' + str(i) + ')')
+            if i != 'ε':
+                headers.append('δN(q,' + str(i) + ')')
         
         table_body = []
         for state in states:
