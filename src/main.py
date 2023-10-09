@@ -11,7 +11,7 @@ def main():
     print("3 - εNFA to DFA")
     operation = input("Enter operation: ")
 
-    if operation == 2:
+    if operation == '2':
         print("Select Method:")
         print("1 - Subset Construction")
         print("2 - Lazy")

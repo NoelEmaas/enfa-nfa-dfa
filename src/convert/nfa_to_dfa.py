@@ -18,9 +18,9 @@ class NfaToDfaConverter:
         self.start_state = automaton.start_state
         self.final_states = automaton.final_states
 
-        if method == 1:
+        if method == '1':
             self._convert_using_subset_construction_method()
-        if method == 2:
+        if method == '2':
             self._convert_using_lazy_method()
 
     def _convert_using_subset_construction_method(self):
