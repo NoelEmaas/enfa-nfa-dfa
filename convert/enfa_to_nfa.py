@@ -2,30 +2,30 @@ from tabulate import tabulate
 
 class ENfaToNfaConverter:
     def __init__(self):
-        self.nfa_transition_table = None
         self.enfa_transition_table = None
+        self.nfa_transition_table = None
         self.inputs = None
         self.states = None
         self.start_state = None
         self.final_states = None
         self.method = None
 
-    def convert(self, inputs, states, start_state, final_states, enfa_transition_table):
-        self.enfa_transition_table = enfa_transition_table
-        self.inputs = inputs
-        self.states = states
-        self.start_state = start_state
-        self.final_states = final_states
+    def convert(self, automaton):
+        self.enfa_transition_table = automaton.transition_table
+        self.inputs = automaton.inputs
+        self.states = automaton.states
+        self.start_state = automaton.start_state
+        self.final_states = automaton.final_states
         self.nfa_transition_table = None
 
-        for state in states:
+        for state in self.states:
             self.enfa_transition_table[state]['CL(q)'] = self._get_closure_states(state)
-            for i in inputs:
+            for i in self.inputs:
                 if i != 'ε':
                     self.enfa_transition_table[state]['S' + str(i)] = self._getS(i, state)
 
-        for state in states:
-            for i in inputs:
+        for state in self.states:
+            for i in self.inputs:
                 if i != 'ε':
                     si_closure = []
                     si_states = self.enfa_transition_table[state]['S' + str(i)]
@@ -33,7 +33,6 @@ class ENfaToNfaConverter:
                         si_closure += self._get_closure_states(si_state)
                     self.enfa_transition_table[state]['δN(q,' + str(i) + ')'] = set(si_closure)
 
-        print(self.enfa_transition_table)
         self._print_nfa_transition_table(self.states)
 
     def _get_closure_states(self, state):

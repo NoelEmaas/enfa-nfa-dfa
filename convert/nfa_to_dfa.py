@@ -11,17 +11,16 @@ class NfaToDfaConverter:
         self.final_states = None
         self.method = None
 
-    def convert(self, inputs, states, start_state, final_states, nfa_transition_table, method):
-        self.nfa_transition_table = nfa_transition_table
-        self.inputs = inputs
-        self.states = states
-        self.start_state = start_state
-        self.final_states = final_states
-        self.dfa_transition_table = None
+    def convert(self, automaton, method):
+        self.nfa_transition_table = automaton.transition_table
+        self.inputs = automaton.inputs
+        self.states = automaton.states
+        self.start_state = automaton.start_state
+        self.final_states = automaton.final_states
 
-        if method == "subset_construction":
+        if method == 1:
             self._convert_using_subset_construction_method()
-        if method == "lazy":
+        if method == 2:
             self._convert_using_lazy_method()
 
     def _convert_using_subset_construction_method(self):
