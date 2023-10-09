@@ -15,12 +15,13 @@ def main():
         print("Select Method:")
         print("1 - Subset Construction")
         print("2 - Lazy")
+        method = input("Enter method: ")
 
         if method not in [1, 2]:
             print("Error: Invalid method")
             exit(1)
 
-        method = input("Enter method: ")
+        
 
     inputs = input("\nEnter input symbols (separated by white spaces): ").split()
     states = input("Enter states (separated by white spaces): ").split()
